@@ -61,7 +61,7 @@ function expand(rel, buf) {
   let j;
   try { j = JSON.parse(buf.toString('utf8')); } catch (_) { return; }
   const s = JSON.stringify(j);
-  for (const m of s.matchAll(/"([\w][\w\/.-]*\/[\w.-]+\.(?:png|webp|m4a|ogg|wav|mp3|json|bin))"/g)) add(m[1]);
+  for (const m of s.matchAll(/"([\w][\w\/. -]*\/[\w. -]+\.(?:png|webp|m4a|ogg|wav|mp3|json|bin))"/g)) add(m[1]);
   if (rel === 'monsters.json') for (const id of Object.keys(j)) add(`sprites/monsters/${id}.json`);
   if (rel === 'gear.json' && Array.isArray(j.classes)) for (const c of j.classes) add(`gear/${c}.json`);
   const gm = rel.match(/^gear\/([\w-]+)\.json$/);

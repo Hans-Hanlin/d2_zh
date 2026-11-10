@@ -157,6 +157,10 @@ const server = http.createServer(async (req, res) => {
       if (rel === 'sw.js') extra['Service-Worker-Allowed'] = '/';
       return serveFile(req, res, file, extra);
     }
+    // 素材 png／webp 互通：遊戲偵測瀏覽器支援 webp 之前（或不支援時）會要 .png，鏡像只存了官方給的其中一種。
+    // 圖片解碼看內容不看副檔名，直接送另一種就能用（不用連網、也不用存兩份）
+    const alt = /\.png$/i.test(file) ? file.replace(/\.png$/i, '.webp') : /\.webp$/i.test(file) ? file.replace(/\.webp$/i, '.png') : null;
+    if (alt && rel.startsWith('d2/') && fs.existsSync(alt)) return serveFile(req, res, alt, { 'Cache-Control': 'no-cache' });
     if (OFFLINE) return send(res, 404, 'Not found (offline)');
     try {
       const buf = await fetchOfficial(rawPath.pathname);
