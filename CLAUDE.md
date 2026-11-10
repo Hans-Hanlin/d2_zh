@@ -7,7 +7,8 @@ https://d2survivors.lol/play/ （D2 Survivors，framara 做的 Diablo II 同人 
 
 來源：舊機的 GitHub repo `jtnhrbpvvm-spec/taiwan_game2` 的 `D2修改版/`（2026-11-10 搬來，複本在 `_research/src_repo/`）。
 **這台電腦（gh 帳號 Hans-Hanlin）對舊 repo 沒有推送權限** → 舊書籤網址 `jtnhrbpvvm-spec.github.io/.../d2_zh.js` 不會再更新。
-新的發佈點目前是本地伺服器 `http://localhost:8790/d2zh/d2_zh.js`；要不要另開公開 repo（像 RO 的 Hans-Hanlin/ro_zh）**先問使用者**。
+**新發佈點（2026-11-11 起）：公開 repo `Hans-Hanlin/d2_zh` → GitHub Pages https://hans-hanlin.github.io/d2_zh/**（書籤 `…/d2_zh/d2_zh.js`、電腦版自動更新、回應.txt 都從這裡）。
+本地伺服器另外從自己的 `/d2zh/` 提供（`__D2ZH_BASE='/d2zh/'`），不經 GitHub。
 姊妹專案：`C:\RO網頁版中文化\`（同樣做法：鏡像＋本地伺服器＋書籤）。
 
 ## 📖 Session Start：先讀
@@ -19,9 +20,10 @@ https://d2survivors.lol/play/ （D2 Survivors，framara 做的 Diablo II 同人 
 ```
 d2_zh.js            ← 書籤本體＝唯一原始碼（手寫、6800 行，直接改；CRLF 換行）。D2ZH_VERSION 每次發布 +1，並在 D2ZH_NEWS 加更新說明
 回應.txt            ← 玩家回報回覆（改了不用升版）
-index.html / 安裝書籤.html / 書籤匯入檔.html ← 書籤教學頁（本地伺服器 /d2zh/ 提供，網址已改成 localhost:8790）
-desktop/            ← 電腦安裝版（D2 Survivors.exe）注入器；d2zh-inject.cjs 的更新來源已改成 localhost:8790/d2zh/
-                       （D2倖存者中文化.zip 還是舊的，改了要用 make-zip.ps1 重包）
+index.html / 安裝書籤.html / 書籤匯入檔.html ← 書籤教學頁（GitHub Pages 首頁；本地伺服器 /d2zh/ 也有）
+desktop/            ← 電腦安裝版（D2 Survivors.exe）注入器；d2zh-inject.cjs 從 Hans-Hanlin/d2_zh 最新提交更新
+                       （改了 desktop/ 或 d2_zh.js 要用 make-zip.ps1 重包 D2倖存者中文化.zip）
+tools/try-translate.js       ← 試翻：node tools/try-translate.js "英文句子"（用 d2_zh.js 的翻譯跑一次）
 tools/local_server/server.js ← 本地伺服器（零依賴）：靜態鏡像＋注入 d2_zh.js＋/api 轉送官方排行榜＋缺檔補抓
 tools/mirror_assets.js       ← 遊戲網頁鏡像（html/js/css/wiki 頁…）→ _research/mirror/
 tools/mirror_d2.js           ← 官方代管的 Diablo II 素材（/d2/）完整下載 → _research/mirror/d2/
@@ -41,6 +43,7 @@ tools/check-update.js        ← 官方新版有哪些字串書籤還沒翻（�
 
 ## ⚠️ 約定
 - `_research/` 是下載的遊戲檔／暴雪素材，**不可推上公開 repo**（已在 .gitignore）。
-- commit 可以直接做；**push、建公開 repo、刪檔先問**。這個環境會靜默擋刪除（rm 顯示成功但檔案還在）。
+- commit 可以直接做；**push 到 d2_zh（等於對外發佈）、刪檔先問**。
+- check-update.js 的「還沒翻到」約 108 句是正常的：傭兵人名（保留英文）、手把按鍵名（View/Menu/Create）、以及含 `*` 的樣板（畫面上不會原樣出現）。要確認某句畫面上翻得對，用 try-translate.js 帶實際句子試。這個環境會靜默擋刪除（rm 顯示成功但檔案還在）。
 - 用 bash 寫含反斜線／反引號的程式會被吃掉 → 用 Write／Edit 工具。
 - 改 d2_zh.js 後：`node --check d2_zh.js`，重新整理本地遊戲頁就生效（伺服器不用重開）。

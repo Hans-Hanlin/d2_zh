@@ -224,16 +224,16 @@
 <div class="wrap">
 
   <div style="margin:16px 0 0;padding:12px 16px;border:1px solid #8f743e;border-radius:10px;background:#221a10;color:#f3e3b0">
-    <b style="color:#f0c94a">本地版</b>　在這台電腦玩：直接開 <a href="/play/">http://localhost:8790/</a>，中文化和書籤修改會<b>自動套用，不用點書籤</b>。<br>
-    下面的書籤是給「在官方網站 d2survivors.lol 玩」時用的，書籤檔由這台電腦的本地伺服器提供（要先開「本地伺服器.bat」）。
+    <b style="color:#f0c94a">新網址</b>　2026-11 起書籤改由 <b>hans-hanlin.github.io/d2_zh</b> 更新（舊的 jtnhrbpvvm-spec 網址停在 V62，請照下面重新加一次書籤）。<br>
+    有下載本地版的：開「本地伺服器.bat」→ <a href="http://localhost:8790/">http://localhost:8790/</a>，中文化和書籤修改會<b>自動套用，不用點書籤</b>。
   </div>
 
   <div class="ie-warn">
     <b>⚠ 你正在用 Internet Explorer（IE）開這一頁。</b><br>
     IE 已經停止支援，<b>遊戲和中文化書籤都無法在 IE 執行</b>，這一頁在 IE 也會顯示不正常。<br>
     請改用 <b>Microsoft Edge</b> 或 <b>Google Chrome</b> 開啟本頁：<br>
-    ・<a href="microsoft-edge:http://localhost:8790/d2zh/">點這裡用 Edge 開啟本頁</a>（Windows 10／11 內建）<br>
-    ・或複製網址到 Edge／Chrome：http://localhost:8790/d2zh/<br>
+    ・<a href="microsoft-edge:https://hans-hanlin.github.io/d2_zh/">點這裡用 Edge 開啟本頁</a>（Windows 10／11 內建）<br>
+    ・或複製網址到 Edge／Chrome：https://hans-hanlin.github.io/d2_zh/<br>
     ・沒有 Chrome：<a href="https://www.google.com/chrome/" target="_blank" rel="noopener">下載 Google Chrome</a>
   </div>
 
@@ -449,7 +449,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-  const code = "javascript:import('http://localhost:8790/d2zh/d2_zh.js?v=%27+Date.now())";
+  const code = "javascript:import('https://hans-hanlin.github.io/d2_zh/d2_zh.js?v=%27+Date.now())";
 
   function toast(msg) {
     const t = document.getElementById('toast');
@@ -476,9 +476,9 @@
   });
 
   // ── 手機步驟示意（每一步都是用 HTML 畫的小手機畫面）──
-  const codeShort = "javascript:import('http://localhost:8790/d2zh/d2_zh.js?v=…";
+  const codeShort = "javascript:import('https://hans-hanlin.github.io/d2_zh/d2_zh.js?v=…";
   const tutorialPage = `
-    <div class="bar"></div><div class="url">localhost:8790</div>
+    <div class="bar"></div><div class="url">hans-hanlin.github.io</div>
     <div class="page dark">
       <div style="text-align:center;color:var(--gold2);font-weight:bold">中 D2 繁體中文</div>
       <div class="mini-btn" style="border:1px solid var(--gold);color:var(--cream);position:relative">📋 複製書籤程式碼
@@ -493,7 +493,7 @@
     ios: [
       { cap: '複製書籤程式碼', desc: '在這一頁按「📋 複製書籤程式碼」。', html: tutorialPage + `<div class="toolbar"><span>‹</span><span>›</span><span>⬆︎</span><span>📖</span><span>⧉</span></div>` },
       { cap: '分享 → 加入書籤', desc: '點 Safari 下方的「分享 ⬆︎」，選「加入書籤」，名稱取成「D2 繁體中文」後儲存。', html: `
-        <div class="bar"></div><div class="url">localhost:8790</div>
+        <div class="bar"></div><div class="url">hans-hanlin.github.io</div>
         <div class="page dark" style="opacity:.5"></div>
         <div class="sheet">
           <div class="sheet-row"><span>拷貝</span><span>⧉</span></div>
@@ -524,7 +524,7 @@
     android: [
       { cap: '複製書籤程式碼', desc: '在這一頁按「📋 複製書籤程式碼」。', html: tutorialPage },
       { cap: '⋮ → ☆ 加入書籤', desc: '點 Chrome 右上角「⋮」，再點上排的「☆」，把這一頁加入書籤。', html: `
-        <div class="bar"></div><div class="url" style="margin-right:30px">localhost:8790</div>
+        <div class="bar"></div><div class="url" style="margin-right:30px">hans-hanlin.github.io</div>
         <div class="page dark" style="opacity:.6"></div>
         <div class="menu"><div class="icons"><span>→</span><span style="position:relative">☆<span class="tap" style="left:-5px;top:-3px"></span></span><span>⬇</span><span>ⓘ</span><span>⟳</span></div>
           <div>新分頁</div><div>書籤</div><div>記錄</div></div>` },

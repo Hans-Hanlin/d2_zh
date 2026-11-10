@@ -14,18 +14,18 @@ D2 Survivors（https://d2survivors.lol/play/ ，Diablo II 同人 survivors 網�
 - 只能用 `localhost` 開（遊戲需要瀏覽器的安全環境）；朋友要玩請在他自己電腦也放一份這個資料夾。
 
 ## 🔖 在官方網站用書籤
-本地伺服器開著時，書籤網址：
+教學頁：**https://hans-hanlin.github.io/d2_zh/**，書籤網址：
 ```
-javascript:import('http://localhost:8790/d2zh/d2_zh.js?v='+Date.now())
+javascript:import('https://hans-hanlin.github.io/d2_zh/d2_zh.js?v='+Date.now())
 ```
-教學頁：http://localhost:8790/d2zh/ 。Chrome 第一次可能會問「允許存取區域網路裝置」→ 允許。
 > 舊書籤（jtnhrbpvvm-spec.github.io/…）還能用，但停在 V62，之後的更新只在這裡。
 
 ## 🛠️ 維護
 | 要做的事 | 怎麼做 |
 |---|---|
 | 改翻譯／修改器 | 直接改 `d2_zh.js`，重新整理遊戲頁 |
-| 發新版 | `D2ZH_VERSION` +1、`D2ZH_NEWS` 加一段說明 |
+| 發新版 | `D2ZH_VERSION` +1、`D2ZH_NEWS` 加一段說明 → commit → `git push`（GitHub Pages 約 1～10 分鐘生效） |
+| 試翻一句 | `node tools/try-translate.js "英文句子"` |
 | 回覆玩家回報 | 改 `回應.txt` |
 | 遊戲改版 | `更新遊戲.bat`（更新鏡像＋素材＋列出沒翻到的新字串） |
 | 遊戲改版後出問題要退回 | `node tools/mirror_rollback.js` 列版本 → `node tools/mirror_rollback.js game-xxxx` |

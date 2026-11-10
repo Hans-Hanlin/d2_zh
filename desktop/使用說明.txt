@@ -2,7 +2,7 @@ D2 Survivors 繁體中文 ── 電腦安裝版專用
 ======================================
 
 這個資料夾是給「從 d2survivors.lol 下載安裝的電腦版遊戲（D2 Survivors.exe，Windows）」用的。
-在瀏覽器裡玩（Chrome / Edge / 手機）請改用書籤：https://jtnhrbpvvm-spec.github.io/taiwan_game2/D2%E4%BF%AE%E6%94%B9%E7%89%88/
+在瀏覽器裡玩（Chrome / Edge / 手機）請改用書籤：https://hans-hanlin.github.io/d2_zh/
 
 【安裝】（擇一）
   方法一（推薦）：連按兩下「建立桌面捷徑.cmd」
