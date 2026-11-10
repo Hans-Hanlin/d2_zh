@@ -1,0 +1,8 @@
+# 下載的遊戲網頁、Diablo II 素材、舊 repo 複本（作者／暴雪的東西，不要推上公開 repo）
+_research/
+# check-update.js 的字串表快取
+tools/cache/
+node_modules/
+__pycache__/
+*.pyc
+.claude/settings.local.json
